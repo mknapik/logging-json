@@ -1,0 +1,21 @@
+AllCops:
+  TargetRubyVersion: 2.3
+  Exclude:
+  - benchmark/**/*.rb
+
+Style/Documentation:
+  Enabled: false
+
+Style/SpaceInsideHashLiteralBraces:
+  EnforcedStyle: no_space
+  EnforcedStyleForEmptyBraces: no_space
+
+Style/DotPosition:
+  EnforcedStyle: trailing
+  Enabled: true
+
+Style/FrozenStringLiteralComment:
+  Enabled: true
+
+Metrics/LineLength:
+  Max: 120

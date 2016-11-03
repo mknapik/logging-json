@@ -1,35 +1,32 @@
 # coding: utf-8
+# frozen_string_literal: true
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'logging/json/version'
+require 'logging/plugins/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "logging-json"
-  spec.version       = Logging::Json::VERSION
-  spec.authors       = ["Michał Knapik"]
-  spec.email         = ["michal.knapik@u2i.com"]
+  spec.name          = 'logging-json'
+  spec.version       = Logging::Plugins::Json.version
+  spec.authors       = ['Michał Knapik']
+  spec.email         = %w(michal.knapik@u2i.com)
 
-  spec.summary       = %q{TODO: Write a short summary, because Rubygems requires one.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.summary       = 'JSON formatter for `logging` gem'
+  spec.description   = 'Allows to pass objects as messages and format them as JSON'
+  spec.homepage      = 'https://github.com/mknapik/logging-json'
 
-  # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
-  # to allow pushing to a single host or delete this section to allow pushing to any host.
-  if spec.respond_to?(:metadata)
-    spec.metadata['allowed_push_host'] = "TODO: Set to 'http://mygemserver.com'"
-  else
-    raise "RubyGems 2.0 or newer is required to protect against " \
-      "public gem pushes."
-  end
+  spec.required_ruby_version = '>= 2.3'
 
-  spec.files         = `git ls-files -z`.split("\x0").reject do |f|
-    f.match(%r{^(test|spec|features)/})
-  end
-  spec.bindir        = "exe"
+  spec.files         = Dir['lib/**/*.rb']
+  spec.bindir        = 'exe'
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
-  spec.require_paths = ["lib"]
+  spec.require_paths = %w(lib)
 
-  spec.add_development_dependency "bundler", "~> 1.13"
-  spec.add_development_dependency "rake", "~> 10.0"
-  spec.add_development_dependency "rspec", "~> 3.0"
+  spec.add_dependency 'logging', '~> 2.1.0'
+
+  spec.add_development_dependency 'bundler', '~> 1.13'
+  spec.add_development_dependency 'rake', '~> 10.0'
+  spec.add_development_dependency 'rspec', '~> 3.0'
+  spec.add_development_dependency 'pry-doc'
+  spec.add_development_dependency 'rubocop', '~> 0.43.0'
+  spec.add_development_dependency 'rubocop-rspec', '~> 1.7.0'
 end

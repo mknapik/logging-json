@@ -1,2 +1,2 @@
-$LOAD_PATH.unshift File.expand_path("../../lib", __FILE__)
-require "logging/json"
+# frozen_string_literal: true
+$LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
