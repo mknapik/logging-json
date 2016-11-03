@@ -7,6 +7,7 @@ require 'logging/json/version'
 Gem::Specification.new do |spec|
   spec.name          = 'logging-json'
   spec.version       = Logging::Json.version
+  spec.licenses      = %w(MIT)
   spec.authors       = ['Michał Knapik']
   spec.email         = %w(michal.knapik@u2i.com)
 
