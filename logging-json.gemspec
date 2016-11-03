@@ -2,11 +2,11 @@
 # frozen_string_literal: true
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'logging/plugins/version'
+require 'logging/json/version'
 
 Gem::Specification.new do |spec|
   spec.name          = 'logging-json'
-  spec.version       = Logging::Plugins::Json.version
+  spec.version       = Logging::Json.version
   spec.authors       = ['Michał Knapik']
   spec.email         = %w(michal.knapik@u2i.com)
 

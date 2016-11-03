@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 require 'logging'
+require_relative '../json/version'
 
 module Logging
   module Layouts
